@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title></title>
+  </head>
+  <body>
+      <h1>Object</h1>
+      <h2>Create</h2>
+      <script>
+        var coworkers = {
+          "programmer":"egoing",
+          "designer": "leezche"
+        };
+
+        document.write("programmer: " + coworkers.programmer+"<br>");
+        document.write("programmer: " + coworkers.designer+"<br>");
+        coworkers.bookkeeper = "drue";
+        document.write("programmer: " + coworkers.bookkeeper+"<br>");
+        coworkers["data scientist"] = "taeho";
+        document.write("programmer: " + coworkers["data scientist"]);
+      </script>
+
+      <h2>Iterater</h2>
+      <script>
+        for(var key in coworkers){
+          document.write(key+"<br>");
+          document.write(key+' : '+coworkers[key]+'<br>');
+        }
+      </script>
+
+      <h2>Property & Method</h2>
+      <script>
+        coworkers.showAll = function(){
+          for(var key in coworkers){
+            document.write(key+' : '+this[key]+'<br>');
+          }
+        }
+        coworkers.showAll();
+      </script>
+
+  </body>
+
+  <!--
+   객체에는 함수도 담을 수 있다.
+
+   coworkers 박혀있어서 객체 이름 바뀌면 곤란 할 수 있다.
+   그런 경우에는 showall 이라는 함수 안에서 함수 속해있는 객체 가리키는 약속된 기호 this 쓴다.
+  -->
+
+</html>
